@@ -1,0 +1,119 @@
+---
+title: Welcome to Devansh Sharma Documentation
+description: An overview of the Devansh Sharma Documentation platform, designed as a default space for organizing and managing project documentation efficiently.
+---
+
+## Overview
+
+Welcome to Devansh Sharma Documentation, your default space for organizing and managing all project documentation. You create structured docs sites with MDX-powered pages, interactive components, and custom themes. This platform streamlines documentation workflows, enabling teams to collaborate on guides, APIs, and changelogs without complex setups.
+
+You benefit from fast search, version history, and seamless publishing. Customize with your brand color `{`#3B82F6`}` for a professional look. Start building your knowledge base today.
+
+<Callout kind="info">
+  New users get instant access to templates and components for rapid setup.
+</Callout>
+
+## Key Features
+
+Explore core capabilities that make documentation efficient.
+
+<Columns cols={3}>
+  <Card title="Interactive Components" icon="zap" href="/docs/components">
+    Use Steps, Tabs, and Cards to create engaging guides that users interact with directly.
+  </Card>
+  <Card title="MDX Powered" icon="code" href="/docs/mdx">
+    Write in Markdown with JSX components for rich, dynamic content without leaving your editor.
+  </Card>
+  <Card title="Custom Themes" icon="palette" href="/docs/themes">
+    Apply brand colors like `{`#3B82F6`}` and fonts to match your identity.
+  </Card>
+</Columns>
+
+## Get Oriented with the Interface
+
+Follow these steps to navigate and start editing.
+
+<Steps>
+  <Step title="Access Dashboard" icon="layout">
+    Log in to view your spaces, pages, and recent edits. The sidebar lists all projects.
+  </Step>
+  <Step title="Create Page" icon="plus">
+    Click "New Page" and select a template. Choose `{`introduction.mdx`}` for starters.
+  </Step>
+  <Step title="Edit Content" icon="edit-3">
+    Use the visual editor or switch to code view. Preview changes live.
+  </Step>
+  <Step title="Publish" icon="upload">
+    Save and deploy. Share via public URL or embed.
+  </Step>
+</Steps>
+
+## Platform Customization
+
+Tailor the interface to your needs across platforms.
+
+<Tabs>
+  <Tab title="Web" icon="globe">
+    Configure global styles in settings.
+
+    ```javascript
+    // config/theme.js
+    export default {
+      colors: {
+        primary: '#3B82F6',
+      },
+    };
+    ```
+  </Tab>
+  <Tab title="CLI" icon="terminal">
+    Use commands for local development.
+
+    <CodeGroup tabs="npm,yarn">
+      ```bash
+      npm install devansh-docs-cli
+      npx devansh-docs init
+      ```
+      ```bash
+      yarn add devansh-docs-cli
+      yarn devansh-docs init
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="API" icon="api">
+    Integrate programmatically.
+
+    ```bash
+    curl -X POST https://api.example.com/docs \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -d '{"title": "New Page"}'
+    ```
+  </Tab>
+</Tabs>
+
+<ExpandableGroup>
+  <Expandable title="Brand Guidelines" default-open="true">
+    Maintain consistency with `{`#3B82F6`}` as primary blue. Use sans-serif fonts and high contrast for accessibility. Avoid gradients; stick to solid fills for icons.
+  </Expandable>
+  <Expandable title="Advanced Config">
+    Override defaults in `{`docs.config.js`}`:
+
+    ```javascript
+    module.exports = {
+      theme: {
+        brandColor: '#3B82F6',
+        logo: '/logo.svg',
+      },
+      nav: {
+        items: [
+          { title: 'Home', href: '/' },
+          { title: 'API', href: '/api' },
+        ],
+      },
+    };
+    ```
+
+    Test changes with `{`npm run dev`}`.
+  </Expandable>
+</ExpandableGroup>
+
+This setup ensures you manage documentation at scale while keeping it user-friendly and on-brand.

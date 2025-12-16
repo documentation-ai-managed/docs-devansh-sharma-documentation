@@ -1,0 +1,130 @@
+---
+title: Configuring Your Documentation Space
+description: Learn how to customize settings, apply branding, and configure options to tailor the documentation platform to your needs.
+---
+
+## Overview
+
+Customize your Devansh Sharma Documentation space to match your brand and workflow. Set your brand color to `#3B82F6`, manage user permissions, handle exports and imports, and integrate with external tools. These settings ensure your documentation reflects your identity and supports your team effectively.
+
+<Columns cols={2}>
+  <Card title="Theme & Branding" icon="palette" href="#theme-branding">
+    Apply your brand color and customize themes.
+  </Card>
+  <Card title="User Permissions" icon="users" href="#permissions">
+    Control access with role-based permissions.
+  </Card>
+  <Card title="Export/Import" icon="upload" href="#export-import">
+    Backup and migrate your documentation.
+  </Card>
+  <Card title="Integrations" icon="plug" href="#integrations">
+    Connect with GitHub, Slack, and more.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Save changes in the admin dashboard under **Settings > Configuration** to apply updates instantly.
+</Callout>
+
+## Theme and Branding
+
+Tailor the visual appearance starting with your brand color `#3B82F6`.
+
+### Set Brand Color
+
+Follow these steps to update your theme:
+
+<Steps>
+  <Step title="Access Settings" icon="settings">
+    Navigate to **Admin > Themes** in the dashboard.
+  </Step>
+  <Step title="Enter Brand Color" icon="palette">
+    Input `#3B82F6` in the **Brand Color** field.
+  </Step>
+  <Step title="Preview and Save" icon="save">
+    Preview changes and click **Apply**.
+  </Step>
+</Steps>
+
+For advanced customization, edit the configuration file directly:
+
+<CodeGroup tabs="JSON,YAML">
+```json
+{
+  "theme": {
+    "brandColor": "#3B82F6",
+    "logo": "https://your-domain.com/logo.svg",
+    "fontFamily": "Inter, sans-serif"
+  }
+}
+```
+
+```yaml
+theme:
+  brandColor: "#3B82F6"
+  logo: https://your-domain.com/logo.svg
+  fontFamily: Inter, sans-serif
+```
+</CodeGroup>
+
+## User Permissions and Access Control
+
+Define roles to manage who can edit, view, or admin your documentation.
+
+| Role       | View | Edit | Admin | Description                          |
+|------------|------|------|-------|--------------------------------------|
+| Viewer     | ✅   | ❌   | ❌    | Read-only access to all pages.      |
+| Editor     | ✅   | ✅   | ❌    | Edit content but no settings.       |
+| Admin      | ✅   | ✅   | ✅    | Full control including users.       |
+
+<Tabs>
+  <Tab title="UI Method" icon="mouse-pointer">
+    Go to **Users > Permissions**. Assign roles via dropdown.
+  </Tab>
+  <Tab title="API Method" icon="api">
+    Use the permissions endpoint:
+
+    ```bash
+    curl -X POST https://api.devansh-docs.com/v1/permissions \
+      -H "Authorization: Bearer YOUR_API_KEY" \
+      -d '{"userId": "user123", "role": "editor"}'
+    ```
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Permission Rules" default-open="false">
+  Create custom rules with conditions like IP restrictions or time-based access.
+</Expandable>
+
+## Export and Import Options
+
+Export your space as Markdown or JSON for backups. Import to migrate content.
+
+<Steps>
+  <Step title="Export" icon="download">
+    Select **Tools > Export**. Choose format and download.
+  </Step>
+  <Step title="Import" icon="upload">
+    Upload file in **Tools > Import**. Review and confirm.
+  </Step>
+</Steps>
+
+## Integrations with External Tools
+
+Connect your documentation to streamline workflows.
+
+<Columns cols={3}>
+  <Card title="GitHub" icon="github" horizontal>
+    Sync pages to repos. <kbd>Ctrl</kbd>+<kbd>S</kbd> publishes changes.
+  </Card>
+  <Card title="Slack" icon="message-circle" horizontal>
+    Notify team on updates via webhooks.
+  </Card>
+  <Card title="Analytics" icon="bar-chart-3" horizontal>
+    Track page views with Google Analytics.
+  </Card>
+</Columns>
+
+<Callout kind="info">
+  Configure integrations in **Settings > Integrations**. Use `YOUR_WEBHOOK_URL` for Slack.
+</Callout>

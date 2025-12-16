@@ -1,0 +1,136 @@
+---
+title: Changelog
+description: Version history of Devansh Sharma Documentation, highlighting updates, new features, and improvements over time.
+---
+
+## Recent Updates
+
+Track the evolution of Devansh Sharma Documentation through these release notes. Each version includes detailed changes to help you stay current.
+
+<Update label="2024-10-20" description="v2.0.0" tags={["breaking", "feature", "improvement"]}>
+
+## Breaking Changes
+
+- Removed legacy `{sidebar}` component in favor of native navigation.
+- Updated default theme color to `#3B82F6` – migrate custom CSS if overridden.
+
+## New Features
+
+- Added `<Video>` and `<Iframe>` components for richer media embeds.
+- Introduced `<ParamField>` and `<ResponseField>` for API documentation.
+- Support for Mermaid diagrams via code blocks (no JSX wrapper required).
+
+## Improvements
+
+- Enhanced parsing rules for special characters like `{` and `<`.
+- Faster build times with optimized JSX component rendering.
+
+## Bug Fixes
+
+- Fixed nested code block rendering with 4-backtick fences.
+- Resolved heading hierarchy validation starting from H2.
+
+</Update>
+
+<Update label="2024-09-15" description="v1.5.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- New `<Columns>` and `<Card>` components for grid layouts.
+- `<Tabs>` and `<CodeGroup>` for multi-platform examples.
+
+## Improvements
+
+- Better error messages for common parsing issues like unescaped `{variable}`.
+- Added icon support from Lucide library (e.g., `icon="zap"`).
+
+## Bug Fixes
+
+- Corrected self-closing tags for container components.
+- Fixed attribute quoting – always use double quotes.
+
+</Update>
+
+<Update label="2024-08-05" description="v1.0.0" tags={["feature"]}>
+
+## Initial Release
+
+- Core MDX components: `<Callout>`, `<Steps>`, `<Update>`.
+- YAML frontmatter validation with no blank lines.
+- Basic syntax rules for headings (H2 start) and escaping.
+
+</Update>
+
+<Callout kind="info">
+
+Review breaking changes before upgrading from v1.x to v2.0.0. Test your site locally first.
+
+</Callout>
+
+## Upgrade Guide
+
+Follow these steps to update Devansh Sharma Documentation to the latest version.
+
+<Steps>
+  <Step title="Backup Your Site" icon="database">
+
+  Create a backup of your `docs/` directory and any custom components.
+
+  </Step>
+  <Step title="Install Latest Version" icon="download">
+
+  <CodeGroup tabs="npm,yarn,pnpm">
+  ```bash
+  npm install devansh-docs@latest
+  ```
+  ```bash
+  yarn add devansh-docs@latest
+  ```
+  ```bash
+  pnpm add devansh-docs@latest
+  ```
+  </CodeGroup>
+
+  </Step>
+  <Step title="Migrate Components" icon="settings">
+
+  Update any deprecated props, like changing `kind={info}` to `kind="info"`.
+
+  Run `npm run build` to validate syntax.
+
+  </Step>
+  <Step title="Deploy" icon="rocket">
+
+  Push changes and redeploy your documentation site.
+
+  </Step>
+</Steps>
+
+## Upcoming Changes
+
+<ExpandableGroup>
+  <Expandable title="v2.1.0 (Planned)" default-open="false">
+
+  Preview of next features:
+
+  - Native search integration.
+  - Dark mode toggle with `theme="dark"`.
+  - Advanced `<Request>` and `<Response>` for API docs.
+
+  </Expandable>
+</ExpandableGroup>
+
+<Columns cols={2}>
+  <Card title="Full Release Notes" icon="book-open" href="https://github.com/devanshsharma/docs/releases" target="_blank">
+    Browse all versions on GitHub.
+  </Card>
+  <Card title="Contribute" icon="github" href="https://github.com/devanshsharma/docs" target="_blank">
+    Suggest features or report issues.
+  </Card>
+</Columns>
+
+| Version | Date       | Key Changes                  |
+|---------|------------|------------------------------|
+| v2.0.0  | 2024-10-20 | Breaking changes, new media  |
+| v1.5.0  | 2024-09-15 | Tabs, CodeGroup              |
+| v1.0.0  | 2024-08-05 | Initial components           |

@@ -1,0 +1,101 @@
+---
+title: Getting Started with Devansh Sharma Documentation
+description: Quick steps to set up your documentation space and create your first project, enabling you to start organizing docs right away.
+---
+
+## Overview
+
+Set up your Devansh Sharma Documentation space in minutes. Follow these steps to create an account, configure your workspace, build your first project, and explore navigation tools. You gain full control over organizing project docs immediately after completion.
+
+<Callout kind="tip">
+  Bookmark your dashboard at `https://docs.devanshsharma.com` for quick access.
+</Callout>
+
+## Create Account and Log In
+
+Begin by signing up for a free account.
+
+<Steps>
+  <Step title="Visit Signup Page" icon="user-plus">
+    Navigate to `https://docs.devanshsharma.com/signup`. Enter your email, create a strong password, and verify your account via email link.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to `https://docs.devanshsharma.com/login`. Use your credentials to access the dashboard.
+  </Step>
+</Steps>
+
+## Set Up Your Workspace
+
+Customize your initial workspace to match your needs.
+
+<Tabs>
+  <Tab title="Web Interface" icon="globe">
+    From the dashboard, click **Workspaces** > **New Workspace**. Name it `MyProjectDocs`, select a theme color like `#3B82F6`, and save.
+  </Tab>
+  <Tab title="CLI Setup" icon="terminal">
+    Install the CLI tool first.
+
+    <CodeGroup tabs="npm,yarn">
+```bash
+npm install -g @devanshsharma/docs-cli
+```
+```bash
+yarn global add @devanshsharma/docs-cli
+```
+    </CodeGroup>
+
+    Initialize your workspace:
+
+````bash
+docs-cli init --workspace MyProjectDocs --color #3B82F6
+````
+  </Tab>
+</Tabs>
+
+## Create Your First Documentation Project
+
+Launch your first project directly from the workspace.
+
+<Steps>
+  <Step title="New Project" icon="plus">
+    In your workspace, select **Projects** > **Create Project**. Enter `QuickstartGuide` as the name and choose MDX format.
+  </Step>
+  <Step title="Add First Page" icon="file-text">
+    Click **Pages** > **New Page**. Title it `getting-started.mdx` and paste initial content.
+  </Step>
+  <Step title="Publish" icon="upload-cloud">
+    Hit **Publish** to make it live. Share the URL: `https://docs.devanshsharma.com/MyProjectDocs/QuickstartGuide/getting-started`.
+  </Step>
+</Steps>
+
+<Callout kind="success">
+  Your project now appears in search results. Use version control integration for backups.
+</Callout>
+
+## Basic Navigation and Tools
+
+Explore core tools to manage your docs efficiently.
+
+<Columns cols={3}>
+  <Card title="Dashboard" icon="layout" href="/dashboard">
+    Overview of workspaces, projects, and recent edits.
+  </Card>
+  <Card title="Editor" icon="edit-3" href="/editor">
+    Real-time MDX editor with live preview and syntax highlighting.
+  </Card>
+  <Card title="Search" icon="search" href="/search">
+    Full-text search across all your documentation.
+  </Card>
+</Columns>
+
+| Tool | Purpose | Shortcut |
+|------|---------|----------|
+| Navigation Sidebar | Quick access to pages | `Ctrl+B` |
+| Preview Pane | Live rendering | `Ctrl+P` |
+| Export | PDF/JSON export | `Ctrl+E` |
+
+<Expandable title="Advanced Navigation Tips" default-open="false">
+  Pin frequently used pages to the top of your sidebar. Use keyboard shortcuts like `<kbd>Ctrl</kbd>+<kbd>K</kbd>` for global search. Integrate with GitHub for pull requests on doc changes.
+</Expandable>
+
+Your documentation space is ready. Create more projects and invite collaborators to scale your organization.

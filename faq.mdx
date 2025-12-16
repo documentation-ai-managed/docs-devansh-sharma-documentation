@@ -1,0 +1,125 @@
+---
+title: Frequently Asked Questions
+description: Common questions and answers about using Devansh Sharma Documentation, covering setup, usage, and troubleshooting scenarios.
+---
+
+## Account and Billing
+
+Manage your Devansh Sharma Documentation account efficiently. You handle subscriptions, billing details, and access controls directly from the dashboard.
+
+<ExpandableGroup>
+  <Expandable title="How do I upgrade my plan?">
+    Navigate to your account settings. Select the desired plan from the billing section and confirm the upgrade. Changes take effect immediately.
+  </Expandable>
+
+  <Expandable title="What payment methods do you accept?">
+    You can use credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. Update methods in the billing panel anytime.
+  </Expandable>
+
+  <Expandable title="Can I cancel my subscription?">
+    Yes, cancel from the billing page. You retain access until the end of the current cycle. No refunds for partial months.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+  Review your usage stats before upgrading to ensure the new plan fits your needs.
+</Callout>
+
+## Content Management
+
+Organize and edit your documentation pages seamlessly. You create, update, and collaborate on content using intuitive tools.
+
+<Tabs>
+  <Tab title="Creating Pages" icon="file-plus">
+    Start by clicking "New Page" in the sidebar. Choose a template, add frontmatter, and begin editing in MDX format.
+  </Tab>
+
+  <Tab title="Version Control" icon="git-branch">
+    Enable Git integration for automatic backups. Commit changes with descriptive messages to track history.
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="MDX,Markdown">
+```mdx
+---
+title: My Page
+description: Page summary.
+---
+## Introduction
+
+Write your content here.
+```
+```markdown
+# My Page
+
+Page summary.
+
+## Introduction
+
+Write your content here.
+```
+</CodeGroup>
+
+## Performance and Limits
+
+Devansh Sharma Documentation scales with your needs. Monitor quotas to optimize performance.
+
+| Feature          | Free Plan | Pro Plan  | Enterprise |
+|------------------|-----------|-----------|------------|
+| Pages            | 50        | 500       | Unlimited  |
+| Build Minutes    | 100/mo    | 1000/mo   | Custom     |
+| Concurrent Builds| 1         | 5         | 20+        |
+| Custom Domains   | No        | 3         | Unlimited  |
+
+<Callout kind="alert">
+  Exceeding limits triggers temporary throttling. Upgrade to restore full speed.
+</Callout>
+
+## Troubleshooting Common Issues
+
+Follow these steps to resolve most problems quickly.
+
+<Steps>
+  <Step title="Check Status" icon="activity">
+    Visit the dashboard status page. Look for outages or maintenance windows.
+  </Step>
+
+  <Step title="Clear Cache" icon="refresh-cw">
+    Run the cache clear command:
+
+````bash
+npm run clear-cache
+````
+
+  </Step>
+
+  <Step title="Review Logs" icon="file-text">
+    Access build logs via the projects panel. Search for error keywords like `syntax` or `timeout`.
+  </Step>
+
+  <Step title="Contact Support" icon="mail">
+    Submit a ticket with logs attached if issues persist.
+  </Step>
+</Steps>
+
+## Support and Resources
+
+Access help whenever you need it.
+
+<Columns cols={3}>
+  <Card title="Documentation" icon="book-open" href="/docs">
+    Full guides and API references.
+  </Card>
+
+  <Card title="Community Forum" icon="users" href="https://forum.example.com" target="_blank">
+    Ask questions and share tips.
+  </Card>
+
+  <Card title="Contact Us" icon="message-circle" href="/support">
+    Priority support for Pro users.
+  </Card>
+</Columns>
+
+<Expandable title="Advanced Configuration">
+  Customize your setup with environment variables. Set `DOCS_BUILD_TIMEOUT=300` in your project settings for longer builds.
+</Expandable>
